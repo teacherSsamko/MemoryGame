@@ -12,8 +12,8 @@ struct ContentView: View {
     
     var body: some View {
         HStack() {
-            ForEach(0..<4) { idx in
-                CardView(card: ...)
+            ForEach(viewModel.cards) { card in
+                CardView(card: card)
             }
         }
         .padding()
@@ -27,7 +27,7 @@ struct CardView: View {
     
     var body: some View {
         ZStack() {
-            if card.isFaceup {
+            if card.isFaceUp {
                 RoundedRectangle(cornerRadius: 10.0)
                     .fill(Color.white)
                 RoundedRectangle(cornerRadius: 10.0)
